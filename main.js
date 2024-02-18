@@ -37,7 +37,6 @@ function getComputerChoice(){
 
 
 //compare
-
 function playRound(playerSelection, computerSelection) {
 // rock beats scissor > scissor beats paper > paper beats rock
 //player plays rock against paper = loose
