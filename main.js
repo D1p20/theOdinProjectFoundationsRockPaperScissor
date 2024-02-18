@@ -10,7 +10,7 @@ function getPlayerSelection(){
     while(a===true){
         let userInput = prompt(message)
         if (userInput.toLowerCase()== "rock" || userInput.toLowerCase()== "paper"|| userInput.toLowerCase() == "scissor" ){
-            returnValue = userInput
+            returnValue = userInput.toLowerCase()
             a =false
     }else{message = "Stop being a silly goose(rock/paper/scissor)" }
         
@@ -34,6 +34,7 @@ function getComputerChoice(){
 //player plays scissor against paper = win
 function playRound(playerSelection, computerSelection) {
     let result = "";
+    console.log(`${playerSelection} + ${computerSelection}`)
     if (playerSelection === computerSelection){
         result = "It's a Tie!";
     }else if (playerSelection=="rock" && computerSelection == "paper"){
@@ -47,5 +48,5 @@ function playRound(playerSelection, computerSelection) {
     
   }
   
-  alert(playRound(playerSelection, computerSelection))
+  //alert(playRound(playerSelection, computerSelection))
   console.log(playRound(playerSelection, computerSelection));
