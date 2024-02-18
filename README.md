@@ -1,0 +1,1 @@
+This repository contains a simple implementation of the classic Rock Paper Scissors game to be played entirely in the console as a project for the javascript foundation of the odin project.
