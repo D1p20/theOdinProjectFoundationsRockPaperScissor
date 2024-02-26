@@ -4,8 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rockPaperScissor</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div id="header">
+            <div> 
+                <img src="images/logo.png" alt="logo">
+               
+            </div>
+            <div>
+            <a >credits:</a>
+            <a href="https://sutemo.itch.io/female-character" target="_blank">|art</a>
+
+            <a href="https://youtu.be/G-FGiICah8Q?si=qDAczG-7DLlRlumN"target="_blank">|music</a>
+            <button onclick="playBgAudio()">musicON</button>
+            <button onclick="pauseBackGroundAudio()">musicOff</button>
+            </div>
+    </div>
+    <div id="girl"></div>
+    <div id="prompt"></div>
+ 
+    <div class="footer">
+        Copyright &#169; Istiak 2024
+    </div>
+    <audio id="myAudio" autoplay loop>
+        <source src="sounds/bg.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="ah" autoplay loop>
+        <source src="sounds/ah.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="giggle" autoplay loop>
+        <source src="sounds/giggle.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="beep" autoplay loop>
+        <source src="sounds/beep.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
     <script src="main.js"></script>
+
 </body>
 </html>
