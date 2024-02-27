@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div id="load_screen">
+      <div id="loading"></div>
+      <div id="loading2">loading.....</div>
+      
+    </div>
     <div id="header">
             <div> 
                 <img src="images/logo.png" alt="logo">
@@ -15,10 +20,11 @@
             <div>
             <a >credits:</a>
             <a href="https://sutemo.itch.io/female-character" target="_blank">|art</a>
-
+            <a href="https://befonts.com/super-comic-font.html"target="_blank">|font</a>
             <a href="https://youtu.be/G-FGiICah8Q?si=qDAczG-7DLlRlumN"target="_blank">|music</a>
-            <button onclick="playBgAudio()">musicON</button>
-            <button onclick="pauseBackGroundAudio()">musicOff</button>
+            <a href="https://www.myinstants.com/en/search/?name=waifu"target="_blank">|sounds</a>
+            
+            <button id="misic-ctl" onclick="checkBgMusic()">musicON</button>
             </div>
     </div>
     <div id="girl"></div>
