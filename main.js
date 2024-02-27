@@ -1,3 +1,4 @@
+/////////////////////////consts
 const girlAi = document.getElementById("girl");
 const promptAi = document.getElementById("prompt");
 const bgAudio = document.getElementById("myAudio"); 
@@ -10,7 +11,7 @@ const paper = "📜";
 const scissor = "✂";
 const isTrue =true;
 const isFalse = false;
-//////////////////////////////////
+//////////////////////////////////lets
 let gameState = false;
 let lastRoundResult="";
 let waitTime= 2000;
@@ -21,6 +22,8 @@ let whoBeatswho = "";
 
 
 //preloading images with array
+//in firefox images still flicker 
+//needs fixing 28th feb 2024
 let imageUrls = [
     "./images/a.png",
     "./images/r.png",
@@ -45,6 +48,7 @@ function preloadImages(urls) {
 preloadImages(imageUrls);
 
 //set game state variable from the game loop
+//uses isTrue isFalse const
 function setGameState(a){
 
     gameState = a
@@ -56,11 +60,12 @@ function game_loop(){
     if (count>15){waitTime = 1000;}
     if (gameState === false){   
     setGameState(isTrue);
-    console.log("here")
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[0]].src}">`;
     promptAi.innerHTML=`<p>So,You think you can beat me in</p><p>Scissors/Paper/Rock<p/>
-                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),yesGame()" >yes</button>
-                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),game_loop()" >no</button>`;
+                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),yesGame()" >
+                        yes</button>
+                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),game_loop()" >
+                        no</button>`;
                         }
     else if(gameState === true && lastRoundResult!==""){
         if(lastRoundResult=== "v"){
@@ -154,7 +159,8 @@ function playerWins(){
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[randomNumber]].src}">`;
     promptAi.innerHTML=`<p>You Win ! lets go again<p/>
                         <p>${whoBeatswho}<p/>
-                        <p>I'm at <span>${cScore}</span>, you're at <span>${pScore}</span>; first to <span>5</span> wins.</p>`;
+                        <p>I'm at <span>${cScore}</span>, you're at <span>${pScore}</span>;
+                         first to <span>5</span> wins.</p>`;
 }
 
 //computer wins
@@ -165,24 +171,28 @@ function computerWins(){
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[randomNumber]].src}">`;
     promptAi.innerHTML=`<p>I win! You're going down!<p/>
                         <p>${whoBeatswho}<p/>
-                        <p>I'm at <span>${cScore}</span>, you're at <span>${pScore}</span>; first to <span>5</span> wins.</p>`;
+                        <p>I'm at <span>${cScore}</span>, you're at <span>${pScore}</span>; 
+                        first to <span>5</span> wins.</p>`;
 
 
 }
-
+//tie tie fish 
+//needs another avatar picture
+//add if mozilla image flickering issue is resolved
 function gameties(){
     
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[1]].src}">`;
     promptAi.innerHTML=`<p>It's a tie!<p/>
-                        <p>I'm at <span>${cScore}</span>, you're at <span>${pScore}</span>; first to <span>5</span> wins.</p>`;
+                        <p>I'm at <span>${cScore}</span>, you're at <span>${pScore}</span>; 
+                        first to <span>5</span> wins.</p>`;
 
 
 }
 
-
+//this is called to start a new clean instance of game 
+//this should be done by game loop 
+//needs fix
 function resetGame(){
-
-
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[1]].src}">`;
     promptAi.innerHTML=`<p>Lets keep going!!!<p/>
                         <button onclick="buttonClick(),playerMove(scissor)" >SCISSOR</button>
@@ -202,8 +212,10 @@ function game_over(){
     lastRoundResult="";
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[4]].src}">`;
     promptAi.innerHTML=`<p>Game Over!<p/><p>"You win! go again?"<p/>
-                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),yesGame()" >yes</button>
-                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),game_loop()" >no</button>`;
+                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),yesGame()" >
+                        yes</button>
+                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),game_loop()">
+                        no</button>`;
     setGameState(isFalse);
     pScore = 0;
     cScore =0;
@@ -219,14 +231,17 @@ function game_over(){
     lastRoundResult="";
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[4]].src}">`;
     promptAi.innerHTML=`<p>I win!! You loooooooose!!!<p/><p>Game Over! go again?<p/>
-                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),yesGame()" >yes</button>
-                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),game_loop()" >no</button>`;
+                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),yesGame()" >
+                        yes</button>
+                        <button onclick="buttonClick(),playBgAudio(),setGameState(isTrue),game_loop()" >
+                        no</button>`;
     
     //setTimeout(game_loop, 2500);
     }
 
     }
-
+//this should be done game loop
+//fix game loop
 function yesGame(){
 
     girlAi.innerHTML = `<img src="${preloadedImages[imageUrls[1]].src}">`;
@@ -295,6 +310,15 @@ function buttonClick(){
     beepAudio.play();
     setTimeout(bpauseAudio, 80);
 }
+
+
+//this part was added to 
+//auto play audio on load , which does not work
+//stop avatar flickering by  in mozilla by trying to side step lazy-loading?? by loading all picture 
+//it does not works 
+//image still flickers
+//fix after etch-sketch.
+//28 feb  2024 3.37 am
 function main(){
     
     const loadScreen= document.getElementById("load_screen");
@@ -311,13 +335,11 @@ function displayImages(i) {
 
 window.addEventListener("load",function(){
     game_loop();
-    this.setTimeout(displayImages(0),1)
-    this.setTimeout(displayImages(1),200)
-    this.setTimeout(displayImages(2),400)
-    this.setTimeout(displayImages(3),600)
-    this.setTimeout(displayImages(4),800)
-    this.setTimeout(displayImages(5),1000)
-    this.setTimeout(displayImages(6),1200)
-    this.setTimeout(main,1400)
+    setInterval(function(){
+        let rand=Math.floor(Math.random()*6)
+        displayImages(rand)
+
+    },100);
+    setTimeout(main,2000);
     
 });
