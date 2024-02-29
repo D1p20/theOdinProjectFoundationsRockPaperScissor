@@ -322,7 +322,7 @@ function buttonClick(){
 //28 feb  2024 3.37 am
 function main(){
     document.body.removeChild(loadScreen);
-    game_loop()
+    
 }
 function displayImages() {
     let rand=Math.floor(Math.random()*6);
@@ -337,3 +337,5 @@ window.addEventListener("load",function(){
     setTimeout(main,2000);
     
 });
+
+game_loop()
