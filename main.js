@@ -6,6 +6,8 @@ const ahAudio = document.getElementById("ah");
 const giggleAudio = document.getElementById("giggle");
 const beepAudio = document.getElementById("beep");
 const musicControl = document.getElementById("misic-ctl");
+const loadScreen= document.getElementById("load_screen");
+const loading= document.getElementById("loading"); 
 const rock = "🪨";  
 const paper = "📜";
 const scissor = "✂";
@@ -322,33 +324,25 @@ function buttonClick(){
 //28 feb  2024 3.37 am
 function main(){
     
-    const loadScreen= document.getElementById("load_screen");
     
     document.body.removeChild(loadScreen);
-    document.body.removeChild(loading);
     
 
 }
 
 
-function displayImages(i) {
-    const loading= document.getElementById("loading");    
-    loading.innerHTML= `<img src="${preloadedImages[imageUrls[i]].src}">`;
+function displayImages() {
+    let rand=Math.floor(Math.random()*6);
+    
+    loading.innerHTML= `<img src="${preloadedImages[imageUrls[rand]].src}">`;
    
 }
 
 window.addEventListener("load",function(){
-    game_loop();
-   
-    const myInterval = setInterval(function(){
-        let rand=Math.floor(Math.random()*6)
-        displayImages(rand)
-        let i = 0;
-        i++
-        if(i>20){clearInterval(myInterval)}
-
-    },100);
     
+    game_loop();
+    setInterval(displayImages,100); 
+    console.log("here")
     setTimeout(main,2000);
     
 });
