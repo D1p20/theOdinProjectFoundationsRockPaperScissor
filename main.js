@@ -287,10 +287,7 @@ function pauseBackGroundAudio(){
     bgAudio.currentTime = 0;
 }
 
-function checkBgMusic(){
-
-    
-    
+function checkBgMusic(){   
     if (bgAudio.duration > 0 && !bgAudio.paused) {
 
         //Its playing...do your job
@@ -325,18 +322,16 @@ function main(){
     
 }
 function displayImages() {
-    let rand=Math.floor(Math.random()*6);
-    
+    let rand=Math.floor(Math.random()*6);  
     loading.innerHTML= `<img src="${preloadedImages[imageUrls[rand]].src}">`;
    
 }
 
 window.addEventListener("load",function(){
-    
+    game_loop();
     pauseAudio();
     setInterval(displayImages,100); 
     setTimeout(main,2000);
     
 });
 
-game_loop()
