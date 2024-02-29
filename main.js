@@ -309,11 +309,9 @@ function checkBgMusic(){
 }
 
 function buttonClick(){
-
     beepAudio.play();
     setTimeout(bpauseAudio, 80);
 }
-
 
 //this part was added to 
 //auto play audio on load , which does not work
@@ -323,14 +321,9 @@ function buttonClick(){
 //fix after etch-sketch.
 //28 feb  2024 3.37 am
 function main(){
-    
-    
     document.body.removeChild(loadScreen);
-    
-
+    game_loop()
 }
-
-
 function displayImages() {
     let rand=Math.floor(Math.random()*6);
     
@@ -339,10 +332,8 @@ function displayImages() {
 }
 
 window.addEventListener("load",function(){
-    
-    game_loop();
+   
     setInterval(displayImages,100); 
-    console.log("here")
     setTimeout(main,2000);
     
 });
