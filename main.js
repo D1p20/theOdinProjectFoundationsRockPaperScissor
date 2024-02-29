@@ -332,7 +332,8 @@ function displayImages() {
 }
 
 window.addEventListener("load",function(){
-   
+    
+    pauseAudio();
     setInterval(displayImages,100); 
     setTimeout(main,2000);
     
