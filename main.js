@@ -323,6 +323,7 @@ function main(){
     
     const loadScreen= document.getElementById("load_screen");
     document.body.removeChild(loadScreen);
+    document.body.removeChild(loading);
 
 }
 
