@@ -330,7 +330,7 @@ function displayImages() {
 window.addEventListener("load",function(){
     game_loop();
     pauseAudio();
-    setInterval(displayImages,100); 
+    setInterval(displayImages,50); 
     setTimeout(main,2000);
     
 });
