@@ -322,8 +322,10 @@ function buttonClick(){
 function main(){
     
     const loadScreen= document.getElementById("load_screen");
+    clearInterval(myInterval);
     document.body.removeChild(loadScreen);
     document.body.removeChild(loading);
+    
 
 }
 
@@ -336,7 +338,7 @@ function displayImages(i) {
 
 window.addEventListener("load",function(){
     game_loop();
-    setInterval(function(){
+    const myInterval = setInterval(function(){
         let rand=Math.floor(Math.random()*6)
         displayImages(rand)
 
