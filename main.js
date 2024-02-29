@@ -19,6 +19,7 @@ let count =0;
 let pScore = 0;
 let cScore =0;
 let whoBeatswho = "";
+let slideshow = true;
 
 
 //preloading images with array
@@ -322,7 +323,7 @@ function buttonClick(){
 function main(){
     
     const loadScreen= document.getElementById("load_screen");
-    clearInterval(myInterval);
+    
     document.body.removeChild(loadScreen);
     document.body.removeChild(loading);
     
@@ -338,11 +339,16 @@ function displayImages(i) {
 
 window.addEventListener("load",function(){
     game_loop();
+   
     const myInterval = setInterval(function(){
         let rand=Math.floor(Math.random()*6)
         displayImages(rand)
+        let i = 0;
+        i++
+        if(i>20){clearInterval(myInterval)}
 
     },100);
+    
     setTimeout(main,2000);
     
 });
