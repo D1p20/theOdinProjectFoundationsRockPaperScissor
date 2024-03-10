@@ -1,24 +1,108 @@
 body html{
-
-    height: 100%;
     margin: 0;
     padding: 0;
-    
-
 }
+
+
+
 body{
     padding:0px;
     margin:0px;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
     background: url(./images/bg.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;
+    
+}
+
+
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    box-sizing: border-box;
+    margin: 0px 10px;
+    padding: 0px 10px;
+    color: white;
+    background-color:rgba(246,174,160,0.5);
+    height : 35px;
+    width: 100%;
+    text-align: right;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#girl{
+    margin: 0;
+    padding: 0;
+    max-height: 500px;
+    max-width: 500px;
+    position: absolute;
+    bottom: 215px; 
+    left: 50%; 
+    transform: translateX(-50%);
+
 
 }
+
+
+#girl>img{
+
+    max-height: 500px;
+    max-width: 500px;
+    /* border: 10px solid green; */
+    
+
+}
+
+
+#prompt{
+    box-sizing: border-box;
+    height: 200px;
+    max-height: 190px;
+    max-width: 400px;
+    min-height: 190px;
+    min-width:80%;
+    background-color:rgba(255,219,194,255);
+    color: rgba(241,63,85,255);
+    font-style: italic;
+    text-align: center;
+    border: 10px solid rgba(246,174,160,255);
+    border-radius: 40px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 21px; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+
+
+.footer {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color:rgba(246,174,160,255);
+    height : 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    bottom: 0%;
+}
+
+
+
+audio {
+    height:0;
+    width:0;
+    }
+
+
 a{
 
     text-decoration: none;
@@ -31,12 +115,13 @@ a:hover{
 }
 
 p{
-
     font-size: 25px;
     text-align: center;
     margin: 2px 0px 2px 0px;
     padding:2px 0px 2px 0px;
 }
+
+
 span{
     font-family: 'Courier New', Courier, monospace;
     font-size: 35px;
@@ -60,75 +145,9 @@ button:hover{
     background-color:rgba(241,63,85,255);
     color: rgba(255,255,255,255);
 }
-#header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
-    box-sizing: border-box;
-    margin: 0px 10px;
-    padding: 0px 10px;
-    color: white;
-    background-color:rgba(246,174,160,0.5);
-    height : 35px;
-    width: 100%;
-    text-align: right;
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
 
 
-}
 
-
-#girl{
-    margin: 0px 5px;
-    padding:0px 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 500px;
-    max-width: 500px;
-    /* border: 10px solid red; */
-
-
-}
-
-#girl>img{
-
-    margin: 5px;
-    max-height: 500px;
-    max-width: 500px;
-    /* border: 10px solid green; */
-    
-
-}
-
-#prompt{
-    box-sizing: border-box;
-    height: 200px;
-    max-height: 190px;
-    max-width: 400px;
-    min-height: 190px;
-    min-width:80%;
-    background-color:rgba(255,219,194,255);
-    color: rgba(241,63,85,255);
-    font-style: italic;
-    text-align: center;
-    border: 10px solid rgba(246,174,160,255);
-    border-radius: 40px;
-    margin-bottom: 0.5px;
-}
-.footer {
-    margin: 0;
-    padding: 0;
-    color: white;
-    background-color:rgba(246,174,160,255);
-    height : 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-}
 
 .switch{
 
@@ -174,15 +193,51 @@ div#load_screen > div#loading img {
     height: auto;
 }
 
-/* div#load_screen > div#loading p {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    height: 100vh;
-} */
 
 @media only screen and (max-width: 800px) {
     p {
       font-size: 15px;
     }
+
+    #girl{
+        margin: 0;
+        padding: 0;
+        max-height: 250px;
+        max-width: 300px;
+        position: absolute;
+        bottom: 115px; 
+        left: 50%; 
+        transform: translateX(-50%);
+    
+    
+    }
+    
+    
+    #girl>img{
+    
+        max-height: 300px;
+        max-width: 250px;
+        /* border: 10px solid green; */
+        
+    
+    }
+    
+    
+    #prompt{
+        box-sizing: border-box;
+        height: 100px;
+        max-height: 100px;
+        max-width: 200px;
+        min-height: 100px;
+        min-width:80%;
+        
+        border-radius: 40px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 21px; 
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+    
 }
